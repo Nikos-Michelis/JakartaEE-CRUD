@@ -5,7 +5,7 @@ JakartaEE-simple-crud-application
 ![ProductsPreview](https://github.com/Nikos-Michelis/JakartaEE-CRUD/assets/92666389/84daa21d-3ae1-4226-b732-55e736065ffa)
 <h1> Add Product </h1>
 
-![ProductsAfterNewAdd](https://github.com/Nikos-Michelis/JakartaEE-CRUD/assets/92666389/32f71ca7-b05b-4b7b-9edf-e3aed8ce3df8)
+![AddProduct](https://github.com/Nikos-Michelis/JakartaEE-CRUD/assets/92666389/1c177f0e-f69a-4af4-9271-489826510c7f)
 <h1> Success Add </h1>
 
 ![SuccessAddProduct](https://github.com/Nikos-Michelis/JakartaEE-CRUD/assets/92666389/669162fb-d2dd-4d93-a247-17a328c8411c)
