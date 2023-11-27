@@ -1,0 +1,459 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+form {
+    display: inline-block;
+    margin: 0;
+}
+.form-custom {
+    display: inline-block;
+    margin: 0;
+    min-width: 290px;
+}
+
+input[type="number"] {
+    width: 40px;
+    text-align: center;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.popup-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.popup-form input {
+    margin-bottom: 10px;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+.actions button {
+    margin-right: 5px;
+}
+
+.home-button, .edit-button, .add-button, .popup-button, .input-button, .delete-button {
+    border-radius: 6px;
+    border: 1px solid;
+    margin-top: 10px;
+    padding: 8px 16px; /* Increase the padding as needed */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Increase the font size as needed */
+    cursor: pointer;
+}
+
+.home-button{
+    background-color: transparent;
+    color: blue;
+    border-color: blue;
+    padding: 8px 20px; /* Increase the padding as needed */
+    min-width: 300px;
+    /* Center horizontally */
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+    /* Center vertically */
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+.edit-button {
+    background-color: transparent;
+    color: blue;
+    border-color: blue;
+    padding: 8px 20px; /* Increase the padding as needed */
+}
+
+.add-button {
+    background-color: transparent;
+    color: blue;
+}
+
+.delete-button {
+    color: red;
+    background-color: transparent;
+    border: 1.3px solid red;
+}
+.home-button:hover,
+.edit-button:hover {
+    color: white;
+    background-color: blue;  
+}
+
+.input-button, .delete-button:hover {
+    color: white;
+    background-color: red;
+}
+
+.input-button:hover, .add-button:hover {
+  background-color: blue;
+  color: white;
+}
+.image{
+  max-width: 120px;
+  max-height: 120px;
+  padding:10px 10px 10px;
+}
+
+.image-upload-label {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #717171;
+    border-radius: 3px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.image-upload-label img {
+    max-width: 100px; /* Adjust the max-width as needed */
+    max-height: 100px; /* Adjust the max-height as needed */
+}
+
+.image-upload-label span {
+    display: block;
+    margin-top: 5px;
+}
+
+/* Hide the default file input */
+.input-image input {
+    display: none;
+}
+.form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  max-width: 720px;
+  background: #fff;
+  border: 2px solid #fff;
+  transform: translate(-50%, -70%);
+}
+
+.show-popup .form-popup {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, opacity 0.1s;
+}
+.form-popup .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #878484;
+  cursor: pointer;
+}
+.material-symbols-rounded::before {content: '\2715'; }
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+.blur-bg-overlay-header {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: 0.1s ease;
+}
+.blur-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: 0.1s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.show-popup .blur-bg-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-popup .form-box {
+  display: flex;
+}
+
+.form-box .form-details {
+  width: 100%;
+  color: black;
+  max-width: 330px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .form-details {
+  padding: 0 40px;
+  background-size: cover;
+}
+
+.signup .form-details {
+  padding: 0 20px;
+  background-size: cover;
+}
+
+.form-box .form-content {
+  width: 100%;
+  padding: 35px;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 29px;
+}
+form .image-field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.image-field input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 0;
+    border: 1px solid #717171;
+    border-radius: 3px;
+}
+
+form .input-field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-field input {
+  height: 100%;
+  width: 100%;
+  background: none;
+  outline: none;
+  font-size: 0.95rem;
+  padding: 0 15px;
+  border: 1px solid #717171;
+  border-radius: 3px;
+}
+
+.input-field input:focus {
+  border: 1px solid blue;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #4a4646;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+  padding: 16px 15px 0;
+}
+
+.input-field input:is(:focus, :valid)~label {
+  transform: translateY(-120%);
+  color: blue;
+  font-size: 0.75rem;
+}
+
+.form-box a {
+  text-decoration: none;
+}
+
+.form-box a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+form :where(.forgot-pass-link, .policy-text) {
+  display: inline-flex;
+  margin-top: 13px;
+  font-size: 0.95rem;
+}
+
+form button {
+  width: 100%;
+  color: white;
+  outline: none;
+  padding: 14px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 25px 0;
+  background: blue;
+  border:1px solid blue;
+  transition: 0.2s ease;
+}
+
+form button:hover {
+  background-color: transparent;
+  color: blue;
+}
+
+.form-content .bottom-link {
+  text-align: center;
+}
+
+.form-popup .signup,
+.form-popup.show-signup .login {
+  display: none;
+}
+
+.form-popup.show-signup .signup {
+  display: flex;
+}
+
+.signup .policy-text {
+  display: flex;
+  margin-top: 14px;
+  align-items: center;
+}
+
+.signup .policy-text input {
+  width: 14px;
+  height: 14px;
+  margin-right: 7px;
+}
+
+@media (max-width: 950px) {
+  .navbar :is(.hamburger-btn, .close-btn) {
+    display: block;
+  }
+
+  .navbar {
+    padding: 15px 0;
+  }
+
+  .navbar .logo img {
+    display: none;
+  }
+
+  .navbar .logo h2 {
+    font-size: 1.4rem;
+  }
+
+  .navbar .links {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    left: -100%;
+    display: block;
+    height: 100vh;
+    width: 100%;
+    padding-top: 60px;
+    text-align: center;
+    background: #fff;
+    transition: 0.2s ease;
+  }
+
+  .navbar .links.show-menu {
+    left: 0;
+  }
+
+  .navbar .links a {
+    display: inline-flex;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #000;
+  }
+}
+
+@media (max-width: 760px) {
+  .form-popup {
+    width: 95%;
+  }
+
+  .form-box .form-details {
+    display: none;
+  }
+
+  .form-box .form-content {
+    padding: 30px 20px;
+  }
+}
+.error-message {
+    width: 90%;
+    margin: 10px auto;
+    border-left: #33000a 10px solid;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 1px 1px rgba(255, 153, 172, 0.2);
+    background-color: #ff99ac;
+}
+.success-message {
+    width: 90%;
+    margin: 50px auto;
+    border-left: #053300 10px solid;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 1px 1px rgba(163, 255, 153, 0.2);
+    background-color: #a3ff99;
+}

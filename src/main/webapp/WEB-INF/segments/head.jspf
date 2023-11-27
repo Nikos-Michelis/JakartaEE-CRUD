@@ -1,0 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<head>
+    <title>Products Manager</title>
+    <link href="${pageContext.request.contextPath}/styles/style.css" rel="stylesheet" />
+</head>
